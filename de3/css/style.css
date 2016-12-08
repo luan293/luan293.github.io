@@ -1,0 +1,120 @@
+﻿body {
+	font-family: Arial;
+	margin: 0px;
+	font-size: 0px;
+}
+body div {
+	font-size: 14px;
+}
+
+p {
+	color:#c7c2c2;
+}
+#container_header {
+	background-color: #2d2f35;
+	border-bottom: #474a51 1px solid;
+}
+#container_banner {
+	background-color: #24262a;
+	display: inline-block;
+	background-image: url("../img/bg_home_intro.gif");
+	border-bottom: #474a51 1px solid;	
+}
+
+#container_slide {
+	background-color: #2d2f35;
+	display: inline-block;
+	width: 100%;
+	border-bottom: #474a51 1px solid;
+	padding: 15px 0px;
+}
+#container_banner h2 {
+	margin: 0px;
+}
+.wrapper80 {
+	width: 80%;
+    margin: 0 auto;
+}
+.col-left {
+	float: left;
+	width: 40%;
+}
+.col-left p {
+	margin-bottom: 0px;
+	margin: 0px;
+}
+.col-right {
+	float:right;
+	width:40%;
+	text-align: center;
+}
+.title {
+	color: #ffff00;
+}
+.item-slide {
+	float: left;
+	position: relative;
+	margin-left: 15px;
+}
+.item-slide:first-child {
+	margin-left: 80px;
+}
+.img-numb {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#container_maincontent {
+	background-color: #2d2f35;
+	display: inline-block;
+	width: 100%;
+	border-bottom: #474a51 1px solid;
+	padding: 15px 0px;
+	padding-bottom: 0px;
+}
+#container_maincontent div {
+	text-align: justify;
+	
+}
+#container_maincontent h2, p {
+	z-index: 11;
+	position: relative;
+}
+#container_maincontent .col-left, .col-right {
+	position: relative;
+}
+#container_maincontent .col-left img {
+	position: absolute;
+	bottom: -55px;
+	right: 0px;
+}
+#container_maincontent .col-right img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.container_footer {
+	text-align: center;
+    padding: 0px 0px 50px 25px;
+	background-image: url("../img/bg_footer.gif");
+	background-size: cover;
+    background-repeat: no-repeat;
+	display: inline-block;
+	width: 100%;
+}
+#container_maincontent h2 {
+	margin: 0px;
+}
+#container_maincontent .col-right p {
+	margin-top: 60px;
+	color: #c7c2c2;
+}
+#container_maincontent .col-left p {
+	color: #c7c2c2;
+}
+#container_banner .col-left p {
+	color: #c7c2c2;
+}
+.container_banner .wrapper p {
+	color: #c7c2c2;
+}
