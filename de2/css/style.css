@@ -1,0 +1,157 @@
+body {
+	font-family: Arial;
+	font-size: 11px;
+	margin: 0px;
+}
+a {
+	text-decoration: none;
+	color: #0a659d;
+	font-size: 13px;
+}
+h1, h2, h3, h4 {
+	margin: 0px;
+}
+.wrapper {
+	background-color: #e6f3fb;
+	margin: 0 auto;
+    width: 350px;
+}
+.category{
+	padding: 5px 10px;
+}
+.title-category h2 {
+	font-size: 14px;
+	border-bottom: 5px #ffa500 solid;
+	margin: 0px;
+}
+.article {
+    background-color: #FFFFFF;
+   	padding: 10px 10px;
+    width: 310px;
+}
+.article-detail {
+	float: left;
+	padding-left: 5px;
+	font-size: 13px;
+	width: 140px;
+	
+}
+.article-detail a {
+	font-weight: bold;
+}
+.category-horo .article-intro a {
+	font-weight: normal;
+	text-decoration: underline;
+}
+.article-intro p {
+	margin: 0px;
+}
+.article img {
+	float:left;
+	border: 1px #cccccc solid;
+	width: 160px;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+.time p {
+	margin-top: 0px;
+}
+.other-article ul li {
+	list-style: none;
+	background-color: #faf0bf;
+	padding: 10px;
+	border-bottom: 1px #ffffff solid;
+}
+.other-article ul {
+    padding: 0px;
+    margin: 0px;
+}
+.time p {
+	color:#808080;
+}
+.other-author {
+	margin-top:0px;
+	background-color: #f5f4eb;
+    display: inline-block;
+    width: 100%;
+}
+.other-author img {
+	float:right;
+}
+.other-author p {
+	font-size: 14px;
+    margin: 25px 0px 0px 15px;
+}
+.other-author a {
+	font-size: 14px;
+	margin: 15px 0px 0px 15px;
+	font-weight: bold;
+}
+.get-news {
+	border-bottom: #cccccc 1px solid;
+}
+.get-news .article {
+	padding: 0px;
+	width: 100%;
+}
+.other-author1 {
+	overflow: hidden;
+	font-size: 14px;
+}
+.other-author1 a {
+	margin-left: 24px;
+    font-weight: bold;
+}
+.other-author1 p {
+	margin: 20px 0px 7px 25px;
+}
+.other-author1 img {
+	float: right;
+	border: none;
+	width: 150px;
+}
+.list-article ul li {
+	list-style: none;
+	padding: 2px;
+	margin: 3px;
+}
+.list-article ul {
+	padding: 0px;
+}
+.article1 {
+	border:#dadada 1px solid;
+	padding: 0px;
+    width: 100%;
+}
+.article1 ul {
+	margin: 0px;
+}
+.article1 ul li {
+	margin: 3px;
+    font-size: 13px;
+}
+.article {
+	overflow: hidden;
+}
+.other-article {
+	overflow: hidden;
+}
+.category-horo .article img {
+	border: none;
+	width: 135px;
+}
+.category-horo .article-detail {
+	width: 170px;
+	margin-top: 20px;
+}
+.category-horo .article-title a{
+	color: black;
+}
+.title-category1 h2 {
+	font-size: 14px;
+}
