@@ -1,0 +1,102 @@
+body {
+	font-family: Georgia;
+}
+#container {
+	width: 500px;
+	border: 1px solid #0033FF;
+	display: inline-block;
+}
+.title-profile {
+	height: 25px;
+	background: url(../img/title_bg.jpg);
+}
+.player-fact {
+	margin-left: 4px;
+}
+.player-profile img {
+	width: 100px;
+	height: 90px;
+	float: left;	
+}
+.player-details {
+	width: 100%;
+}
+.player-details ul {
+	height: 100px;
+	overflow: scroll;
+	list-style: none;
+	padding: 0px;
+    margin: 0px;
+}
+.player-fact {
+	margin-top: 20px;
+	margin-right: 5px;
+}
+.player-fact ul {
+	margin: 0px;
+	list-style-image: url('../img/No3.gif');
+	margin-left: 36px;
+	margin-top: 20px;
+    margin-bottom: 53px;
+}
+.content-cmt {
+	background-color: #ececec;
+	padding: 2.5px 4px;
+    margin: 0px 1.5px;
+}
+.content-cmt p {
+	margin: 8px 0px;
+}
+.posted-cmt a {
+	text-decoration: none;
+	color: #0a33ff;
+}
+.posted-cmt ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: 20px;
+}
+.posted-cmt li {	
+	position: relative;
+}
+.posted-cmt li:before { 
+    content: "";
+    border-color: #ececec transparent ;
+    border-style: solid;
+    border-width: 1em 1em 0em 1em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: 0em;
+    position: relative;
+    float: left;
+}
+
+.txt-cmt-area {
+	margin-top: 20px;
+}
+.txt-cmt-area table tr td:first-child {
+	width: 105px;
+}
+.txt-cmt-area textarea {
+	width: 95%;
+	height: 85px;
+}
+.txt-cmt-area textarea::-webkit-input-placeholder {
+	color: black;
+}
+.title-area {
+	text-align: center;
+}
+.txt-cmt-area tr {
+	height: 20px;
+}
+.txt-cmt-area input {
+	height: 20px;
+}
+.txt-cmt-area h4{
+	margin: 0px;
+	font-weight: normal;
+	font-size: 14px;
+}
