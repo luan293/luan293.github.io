@@ -1,0 +1,143 @@
+body {
+	font-size: 0.685em;
+	color: #595959;
+	margin: 0px;
+	font-family: Arial;
+}
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+#container {
+	background-color: #121214;
+	padding: 20px 0px;
+	display: inline-block;
+	width: 100%;
+}
+.wrapper {
+	width: 70%;
+	margin-left: 70px;
+}
+.col-left {
+	width: 400px;
+	float: left;
+}
+.col-left .header p {
+	margin-top: 15px;
+	margin: 0px;
+}
+.col-right {
+	width: 240px;
+	float: left;
+	margin-left: 30px;
+}
+.block-up {
+	margin-top: 40px;
+}
+.img-article {
+	float: left;
+	margin-right: 25px;
+	margin-bottom: 30px;
+}
+.img-article img {
+    max-width: 130px;
+    max-height: 90px;
+    min-height: 90px;
+    min-width: 130px;
+}
+.article {
+	padding-left: 10px;
+}
+.intro-article {
+	margin: 0px;
+	margin-top: 20px;
+}
+.title-article p {
+	margin: 0px;
+}
+.intro-article {
+	border-bottom: 1px #595959 dotted;
+}
+.more-info {
+	margin-left: 10px;
+	margin-top: 15px;
+	margin-bottom: 85px;
+}
+.more-info ul {
+	list-style: none;
+	margin: 0px;
+    padding: 0px;
+}
+.more-info li {
+	padding-left: 15px;
+	background: url(../img/arr_1.gif) no-repeat 0px 2px;
+}
+.other-article ul {
+    column-count: 2;
+    column-gap: 10px;   
+}
+.other-article ul li a {
+	color: #595959;
+}
+.col-right {
+	background-color: #232326;
+}
+.img-right {
+	margin: 70px 20px 0px 20px;
+    text-align: center;
+    border-top: 1px #595959 solid;
+}
+.img-right img {
+	max-width: 100%;
+	margin: 25px 0px 20px 0px;
+}
+.text-right {
+	margin: 0px 24px;
+}
+.text-right a {
+	margin-bottom: 10px;
+}
+.text-right p {
+	margin:0px;
+}
+.col-right .more-info {
+	border: none;
+	margin: 45px 25px;
+}
+.other-article {
+	padding-bottom: 20px;
+	border-bottom: 1px #595959 dotted;
+}
+.other-article ul {
+	margin: 0;
+    padding: 0px;
+    list-style: none;
+    margin-top: 15px;
+}
+.other-article li {
+	margin-top: 10px;
+	position: relative;
+	list-style-type: none;
+	padding-left: 10px;
+}
+.other-article li::before {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 0px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	width: 0; 
+	height: 0; 
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	border-left: 3px solid #595959;
+}
+.other-article a {
+	text-decoration: underline;
+}
+.block-down {
+	padding-left: 10px;
+}
