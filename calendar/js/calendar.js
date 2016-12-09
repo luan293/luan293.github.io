@@ -90,29 +90,25 @@ function printtable(year, month) {
   	if(checkY() == true) {
   		// if////////////////////////
   		if(fristdayofmonth == 0) {
-  			alert(fristdayofmonth);
   			day[0]="1";
   			for(var i = 1; i < thangngaynhuan[month-1]; i++) {
-			   	day.push(i);
+			   	day.push(i+1);
 			   	//count++;
 			}
   		}else{
   			for(var i = 0; i < fristdayofmonth; i++) {
-			   		//thang trc
-			   		day[i]="";
-				   	day[i] += " ";
-				   	//count++; 	
-				   //alert(day[i]);
+			   	//thang trc
+			   	day[i]="";
+				day[i] += " ";
+				//count++; 	
+				//alert(day[i]);
   			}
-	  			for(var i = 1; i <= thangngaynhuan[month-1]; i++) {
+	  		for(var i = 1; i <= thangngaynhuan[month-1]; i++) {
 			   	day.push(i);
 			   	//count++;
 			}
   		}
-  			
-		  //var count5 = count
 
-		
 		var x = document.getElementsByTagName("td");
 		//document.getElementsByTagName("td").innerHTML = "aaa";
 		//cleartable();
@@ -123,17 +119,26 @@ function printtable(year, month) {
 		//	document.getElementById("tableindex").innerHTML = chia7[5];
   	}else{
    			//nam thuong  			
-   			for(var i = 0; i < fristdayofmonth; i++) {
-     			//thang trc
-     			day[i]="";
-  	   			day[i] += " ";
-  	   			//count++;
-	   	  	}
-	   		//var count5 = count
-	   		for(var i = 1; i <= thangngay[month-1]; i++) {
-	   			day.push(i);
-	   			//count++;
-	   		}
+   			if(fristdayofmonth == 0) {
+	  			alert(fristdayofmonth);
+	  			day[0]="1";
+	  			for(var i = 1; i < thangngay[month-1]; i++) {
+				   	day.push(i+1);
+				   	//count++;
+				}
+  			}else{
+	  			for(var i = 0; i < fristdayofmonth; i++) {
+				   	//thang trc
+				   	day[i]="";
+					day[i] += " ";
+					//count++; 	
+					//alert(day[i]);
+	  			}
+	  			for(var i = 1; i <= thangngay[month-1]; i++) {
+				   	day.push(i);
+				   	//count++;
+				}
+  			}
 	   		var x = document.getElementsByTagName("td");
 	   		//document.getElementsByTagName("td").innerHTML = "aaa";
 	   		//cleartable();
