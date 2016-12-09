@@ -1,19 +1,61 @@
 table, th, td {
-   border: 1px solid black;
+   border: 1px solid #ffffff;
    text-align: center;
+   background-color: #000000;
 }
+#tableindex {
+    width: 410px;
+}
+#tableindex th {
+	color: yellow;
+	background-color: #adadad;
+}
+
 #tableindex td:hover{
 	background: yellow;
 }
 #textbox-date{
-	
+	vertical-align: middle;
+	height: 30px;
+}
+#btnshowcld{
+	vertical-align: middle;
+}
+#pickyears {
+    height: 30px;
+    float: left;
+    width: 60px;
+    margin-right: 2px;
+}
+#pickmonths {
+    height: 30px;
+    float: left;
+    width: 100px;
+    margin-right: 2px;
 }
 .btn{
 	float: left;
-	background-color: blue;
-	width: 10%;
-    margin-right: 50px;
-    text-align: center;
+    margin-right: 2px;
+    min-width: 60px;
+    min-height: 30px;
+    max-width: 60px;
+    max-height: 30px;
+}
+.lui-nam{
+	background: url(../img/luinam.jpg) no-repeat;
+	background-size: cover;
+}
+.lui-thang{
+	background: url(../img/luithang.jpg) no-repeat;
+	background-size: cover;
+}
+.tien-nam{
+	background: url(../img/tiennam.jpg) no-repeat;
+	background-size: cover;
+}
+.tien-thang{
+	background: url(../img/tienthang.jpg) no-repeat;
+	background-size: cover;
 }
 .notdayofmonth{
 	background-color: #000000;
@@ -21,6 +63,16 @@ table, th, td {
 #showcdl .notdayofmonth:hover{
 	background-color: #000000;
 }
+.dayofmonth{
+	background-color: #ffffff;
+}
 .today{
-	background-color: red;
+	background-color: blue;
+}
+.clearfix:after{
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
 }
