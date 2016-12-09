@@ -120,7 +120,6 @@ function printtable(year, month) {
   	}else{
    			//nam thuong  			
    			if(fristdayofmonth == 0) {
-	  			alert(fristdayofmonth);
 	  			day[0]="1";
 	  			for(var i = 1; i < thangngay[month-1]; i++) {
 				   	day.push(i+1);
