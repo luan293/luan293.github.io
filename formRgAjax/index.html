@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<title>Ajax</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/calendar.js"></script>
+	<script src="js/rgAjax.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body onload="aaa()">
+	<div class="container">
+		<div class="form">
+	      	<div class="tab-content">
+	        	<div id="signup">   
+	          		<h1>Sign Up for Free</h1>         
+	          		<form id="dangky" onsubmit="return false"> 
+		          		<div class="field-wrap">
+			            	<label>
+				                	User Name<span class="req">*</span>
+				              	</label>
+			            	<input type="text" id="username" onblur="checkValidUsername(this.value)"><p id="validuser"></p>
+			          	</div> 
+			            <div class="field-wrap">
+			            	<label>
+			            		Email Address<span class="req">*</span>
+			            	</label>
+			            	<input type="text" onblur="checkValidEmail(this.value)" id="email"><p id="validemail"></p>
+			          	</div>         
+		          		<div class="field-wrap">
+		            		<label>
+		              			Set A Password<span class="req">*</span>
+		            		</label>
+		            		<input type="text" id="password" onblur="checkValidPw(this.value)"><p id="validpw"></p>
+		          		</div>
+		          		<div class="field-wrap">
+		            		<label>
+		              			Birthday<span class="req">*</span>
+		            		</label>
+		            		<input type="text" id="textbox-date"  readonly onclick="showcdl()">
+		            		<div id="showcdl">
+								<div class ="btn lui-nam" onclick="btncluinam();"></div>
+								<div class="btn lui-thang" onclick="btnluithang();"></div>
+								<select id="pickyears" onchange="printtable(getY(),getM());"></select>
+								<select id="pickmonths" onchange="printtable(getY(),getM());">
+									<option value="1">January</option>
+									<option value="2">February</option>
+									<option value="3">March</option>
+									<option value="4">April</option>
+									<option value="5">May</option>
+									<option value="6">June</option>
+									<option value="7">July</option>
+									<option value="8">JuAugustly</option>
+									<option value="9">September</option>
+									<option value="10">October</option>
+									<option value="11">November</option>
+									<option value="12">December</option>
+								</select>
+								<div class ="btn tien-thang" onclick="btntienthang();"></div>
+								<div class ="btn tien-nam" onclick="btnctiennam();"></div>
+								<div class ="clearfix"></div>			
+								<table id="tableindex">
+									<tr>
+										<th>Sun</th>
+									    <th>Mon</th>
+									    <th>Tue</th> 
+									    <th>Wed</th>
+									    <th>Thu</th>
+									    <th>Fri</th> 
+									    <th>Sat</th>	    
+									</tr>
+								   <tr>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+								  </tr>
+								  <tr>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+								  </tr>
+								  <tr>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+								  </tr>
+								  <tr>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+								  </tr>
+								  <tr>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+								  </tr>
+								   <tr>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td> 
+									    <td onclick="pickup(this.innerHTML);"></td>
+									    <td onclick="pickup(this.innerHTML);"></td>
+								  </tr>
+								</table>
+							</div>
+		          		</div>          
+		          		<button id="reg" onclick="getdata()" type="submit" disabled="true" class="button button-block"/>Submit</button>        
+	          		</form>
+	        	</div>            
+	      	</div><!-- tab-content -->     
+		</div> <!-- /form -->
+	</div>
+</body>
+</html>

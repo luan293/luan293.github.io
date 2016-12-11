@@ -1,0 +1,158 @@
+table, th, td {
+   border: 1px solid #ffffff;
+   text-align: center;
+   background-color: #000000;
+}
+.clearfix:after{
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+#tableindex {
+    width: 410px;
+}
+#tableindex th {
+	color: yellow;
+	background-color: #adadad;
+}
+
+#tableindex td:hover{
+	background: yellow;
+}
+#textbox-date{
+	vertical-align: middle;
+	height: 30px;
+}
+#btnshowcld{
+	vertical-align: middle;
+}
+#pickyears {
+    height: 30px;
+    float: left;
+    width: 60px;
+    margin-right: 2px;
+}
+#pickmonths {
+    height: 30px;
+    float: left;
+    width: 100px;
+    margin-right: 2px;
+}
+.btn{
+	float: left;
+    margin-right: 2px;
+    min-width: 60px;
+    min-height: 30px;
+    max-width: 60px;
+    max-height: 30px;
+}
+#reg {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 15px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #1ab188;
+    color: #ffffff;
+    margin-left: 30%;
+    width: 300px;
+}
+.field-wrap p{
+	color: red;
+}
+.lui-nam{
+	background: url(../img/luinam.jpg) no-repeat;
+	background-size: cover;
+}
+.lui-thang{
+	background: url(../img/luithang.jpg) no-repeat;
+	background-size: cover;
+}
+.tien-nam{
+	background: url(../img/tiennam.jpg) no-repeat;
+	background-size: cover;
+}
+.tien-thang{
+	background: url(../img/tienthang.jpg) no-repeat;
+	background-size: cover;
+}
+.notdayofmonth{
+	background-color: #000000;
+}
+#showcdl .notdayofmonth:hover{
+	background-color: #000000;
+}
+.dayofmonth{
+	background-color: #ffffff;
+}
+.today{
+	background-color: blue;
+}
+.clearfix:after{
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+ #dangky {
+	//position: absolute;
+}
+
+
+.form {
+    background: rgba(19, 35, 47, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 40px;
+    font-size: 2em;
+}
+.top-row > div {
+    float: left;
+    width: 100%;
+    margin-right: 4%;
+}
+.field-wrap {
+    position: relative;
+    margin-bottom: 40px;
+}
+label {
+    transform: translateY(6px);
+    left: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 22px;
+}
+label .req {
+    margin: 2px;
+    color: #1ab188;
+}
+input, textarea {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #a0b3b0;
+    color: #ffffff;
+    border-radius: 0;
+    -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
