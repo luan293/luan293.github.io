@@ -1,11 +1,13 @@
 var currentImg = 0;
+var x, y, x2;
 function load(){
 	document.getElementsByClassName('small')[0].className = "notsmall small img-1";
+	x = document.getElementsByClassName("img");
+	y = document.getElementsByClassName("img").length;
+ 	x2 = document.getElementsByClassName("small");
 }
 function show(numb) {
-	var x = document.getElementsByClassName("img");
-	var y = document.getElementsByClassName("img").length;
-	var x2 = document.getElementsByClassName("small");
+	
 	//var y2 = document.getElementsByClassName("small").length;
 	if(numb > y-1){
 		currentImg = 0;
@@ -30,4 +32,12 @@ function next(){
 function prev(){
 	currentImg-=1;
 	show(currentImg);	
+}
+function clickimg(string){
+	for(i = 1; i <= y; i++){
+		if(string.indexOf(i) > -1){
+			currentImg = i-1;
+			show(currentImg);
+		}
+	}
 }
