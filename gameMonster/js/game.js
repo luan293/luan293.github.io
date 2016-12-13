@@ -19,11 +19,11 @@ var player = {
 function Ball(mapWidth, mapHeight, lvl){
 	this.mapWidth = mapWidth;
 	this.mapHeight = mapHeight;
-	this.radius = 15;
+	this.radius = 30;
 	this.speedX = Math.floor(Math.random() * (lvl+1)) +lvl;
 	this.speedY = Math.floor(Math.random() * (lvl+2)) +lvl;
-	this.cx = Math.floor(Math.random() * 300) + this.radius;
-	this.cy = Math.floor(Math.random() * 2) + this.radius;
+	this.cx = Math.floor(Math.random() * 300) /*+ this.radius*/;
+	this.cy = Math.floor(Math.random() * 2)/* + this.radius*/;
 	miss = false;
 	die = false;
 }
@@ -42,16 +42,16 @@ Ball.prototype.draw = function(context){
 	context.beginPath();
 	context.fillStyle = "red";
 	//context.arc(this.cx,this.cy,this.radius,0,Math.PI*2,true);
-	context.strokeRect(this.cx-this.radius,this.cy-this.radius,30,30)
+	//context.strokeRect(this.cx-this.radius,this.cy-this.radius,31,30)
 	context.closePath();
 	context.fill();
-	context.drawImage(img,this.cx-this.radius,this.cy-this.radius);
+	context.drawImage(img,this.cx,this.cy);
 }
 Ball.prototype.move = function(){
 	this.cx += this.speedX;
 	this.cy += this.speedY;
-	this.left = this.cx - this.radius;
-	this.top = this.cy - this.radius;
+	this.left = this.cx /*- this.radius*/;
+	this.top = this.cy /*- this.radius*/;
 	this.right = this.cx + this.radius;
 	this.bottom = this.cy + this.radius;
 }
@@ -71,7 +71,22 @@ function draw(){
 	//_reqAnimation(draw);
 }
 function killball(ball, mousepos){
-	if(ball.cx-15 < mousepos.x && mousepos.x < ball.cx+15 && ball.cy-15 < mousepos.y && mousepos.y < ball.cy+15 ){
+	if(ball.cx < mousepos.x && mousepos.x < ball.cx+30 && ball.cy< mousepos.y && mousepos.y < ball.cy+30 ){
+		//delete ball.prototype.draw;
+		player.score += 5;
+		ball.miss = false;
+		ball.die = true;
+		return true;
+	}else{
+		ball.miss = true;
+		ball.die =false;
+		return false;
+	}
+	//}
+	
+}
+function killballmb(ball, mousepos){
+	if(ball.cx < mousepos.x && mousepos.x < ball.cx+40 && ball.cy< mousepos.y && mousepos.y < ball.cy+40 ){
 		//delete ball.prototype.draw;
 		player.score += 5;
 		ball.miss = false;
@@ -220,6 +235,7 @@ window.onload = function() {
 	cy = _canvas.height/2;
 	_canvas.addEventListener('click', function(evt) {
         var mousePos = getMousePos(_canvas, evt);
+        console.log(mousePos.x+" "+mousePos.y);
         if(player.pause == false){
 
         	if(killball(_ball, mousePos)){
@@ -260,33 +276,34 @@ window.onload = function() {
        	}
     }, false);
 
-	document.addEventListener("touchend", function(evt) { evt.preventDefault(); }, false);
-        _canvas.addEventListener("touchstart", function(evt)
+	
+        _canvas.addEventListener("touch", function(evt)
         {
            var mousePos = getMousePos(_canvas, evt);
+           console.log(mousePos.x+" "+mousePos.y);
         if(player.pause == false){
 
-        	if(killball(_ball, mousePos)){
+        	if(killballmb(_ball, mousePos)){
         		
        			_ball = new Ball(_canvas.width,_canvas.height,player.level); 
 	       	}
-	       	if(killball(_ball2, mousePos)){
+	       	if(killballmb(_ball2, mousePos)){
 	       		
 	       		_ball2 = new Ball(_canvas.width,_canvas.height,player.level);       	
 	       	}
-	       	if(killball(_ball3, mousePos)){
+	       	if(killballmb(_ball3, mousePos)){
 	       		
 	       		_ball3 = new Ball(_canvas.width,_canvas.height,player.level);       	
 	       	}
-	       	if(killball(_ball4, mousePos)){
+	       	if(killballmb(_ball4, mousePos)){
 	       		
 	       		_ball4 = new Ball(_canvas.width,_canvas.height,player.level);       	
 	       	}
-	       	if(killball(_ball5, mousePos)){
+	       	if(killballmb(_ball5, mousePos)){
 	       		
 	       		_ball5 = new Ball(_canvas.width,_canvas.height,player.level);       	
 	       	}
-	       	if(killball(_ball6, mousePos)){
+	       	if(killballmb(_ball6, mousePos)){
 	       		
 	       		_ball6 = new Ball(_canvas.width,_canvas.height,player.level);       	
 	       	}
