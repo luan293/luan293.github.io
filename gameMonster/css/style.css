@@ -1,4 +1,7 @@
 img {display: none;}
+body {
+	    margin: 0px;
+}
 .clearfix:after{
     clear: both;
     content: ".";
@@ -6,6 +9,10 @@ img {display: none;}
     width: 0px;
     height: 0px;
 }
-#img{
-	width: 30px;
+#canvas {
+	background: url(../img/abstract-background-with-a-geometric-design_1048-2803.jpg) no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-width: 768px) {
+	
 }
