@@ -7,7 +7,10 @@ var __reqAnimation;
 var __cAnimation;
 var img;
 var img2;
-var img3;
+var btnboom;
+var btnpause;
+var btnplay;
+var btnrs;
 var checklife = new Array;
 checklife[0]="";
 var player = {
@@ -16,10 +19,15 @@ var player = {
 	level: 1,
 	pause: false
 };
+var balldie = {
+	x: "",
+	Y: ""
+};
 function Ball(mapWidth, mapHeight, lvl){
 	this.mapWidth = mapWidth;
 	this.mapHeight = mapHeight;
-	this.radius = 30;
+	this.iwidth = 100;
+	this.iheight = 70;
 	this.speedX = Math.floor(Math.random() * (lvl+1)) +lvl;
 	this.speedY = Math.floor(Math.random() * (lvl+2)) +lvl;
 	this.cx = Math.floor(Math.random() * 300) /*+ this.radius*/;
@@ -27,16 +35,7 @@ function Ball(mapWidth, mapHeight, lvl){
 	miss = false;
 	die = false;
 }
-function Balldie(x, y){
-	var posx=x;
-	var posy=y;
-}
-Balldie.prototype.draw = function(context){
 
-	context.drawImage(img3,posx, posy);
-}
-Balldie.prototype.move = function(){}
-Balldie.prototype.checkCollision = function() {}
 
 Ball.prototype.draw = function(context){
 	context.beginPath();
@@ -45,15 +44,15 @@ Ball.prototype.draw = function(context){
 	//context.strokeRect(this.cx-this.radius,this.cy-this.radius,31,30)
 	context.closePath();
 	context.fill();
-	context.drawImage(img,this.cx,this.cy);
+	context.drawImage(img,this.cx,this.cy, this.iwidth, this.iheight);
 }
 Ball.prototype.move = function(){
 	this.cx += this.speedX;
 	this.cy += this.speedY;
 	this.left = this.cx /*- this.radius*/;
 	this.top = this.cy /*- this.radius*/;
-	this.right = this.cx + this.radius;
-	this.bottom = this.cy + this.radius;
+	this.right = this.cx + this.iwidth;
+	this.bottom = this.cy + this.iheight;
 }
 Ball.prototype.checkCollision = function() {
 	if(this.left <= 0 || this.right >= this.mapWidth) this.speedX = - this.speedX;
@@ -62,17 +61,21 @@ Ball.prototype.checkCollision = function() {
 
 function draw(){
 	_context.clearRect(0,0,_canvas.width,_canvas.height);
+	drawballdie(balldie.x, balldie.y);
 	_ball.draw(_context);
 	_ball2.draw(_context);
 	_ball3.draw(_context);
 	_ball4.draw(_context);
 	_ball5.draw(_context);
 	_ball6.draw(_context);
+	
 	//_reqAnimation(draw);
 }
 function killball(ball, mousepos){
-	if(ball.cx < mousepos.x && mousepos.x < ball.cx+30 && ball.cy< mousepos.y && mousepos.y < ball.cy+30 ){
+	if(ball.cx < mousepos.x && mousepos.x < ball.cx+100 && ball.cy< mousepos.y && mousepos.y < ball.cy+70 ){
 		//delete ball.prototype.draw;
+		balldie.x=ball.cx;
+		balldie.y=ball.cy;
 		player.score += 5;
 		ball.miss = false;
 		ball.die = true;
@@ -115,7 +118,7 @@ function update(){
 	_ball6.checkCollision();
 	draw();	
 	drawplayer();
-	Balldie();
+	//Balldie();
 
 	if(player.pause == false){
 		_reqAnimation(update);
@@ -141,7 +144,17 @@ function drawpscore(){
     _context2.fillText("Score: "+player.score, 10, 25);
 }
 function drawpbtn(){
-    _context2.drawImage(img,80,44);
+	if(player.pause == false){
+		_context2.drawImage(btnpause,80,44, 40, 40);	
+	}else{
+		_context2.drawImage(btnplay,80,44, 40, 40);
+	}
+    
+    _context2.drawImage(btnboom,130,44, 40, 40);
+    _context2.drawImage(btnrs,170,44, 40, 40);
+}
+function drawballdie(x, y){
+	  _context.drawImage(img2, x, y, 100, 70);
 }
 function drawtext(){
 	    _context.font = '30pt Calibri';
@@ -173,8 +186,20 @@ function checkLife(){
 	}	
 }
 function uplevel(){
-	if(player.score % 50 == 0 && player.score != 0){
-		player.level += 1;
+	if(player.score<=50){
+		player.level = 1;
+	}
+	if(player.score>50 && player.score<=100){
+		player.level = 2;
+	}
+	if(player.score>100 && player.score<=200){
+		player.level = 3;
+	}
+	if(player.score>200 && player.score<=300){
+		player.level = 4;
+	}
+	if(player.score>300 && player.score<=400){
+		player.level = 5;
 	}
 	return player.level;
 }
@@ -194,7 +219,26 @@ function clickbtnpause(mousepos){
 	//}
 	
 }
-
+function clickbtnboom(mousepos){
+	if(130 < mousepos.x && mousepos.x <165  && -62< mousepos.y && mousepos.y < -31 ){
+		//delete ball.prototype.draw;
+		uplevel();
+		player.score += 30;
+		save(player.score, player.level, player.life);
+		createBall();
+	}
+	//}
+}
+function clickbtnrs(mousepos){
+	if(170 < mousepos.x && mousepos.x <195 && -62< mousepos.y && mousepos.y < -31 ){
+		//delete ball.prototype.draw;
+		player.life = 5;
+		player.score = 0;
+		player.level = 1;
+		sessionStorage.clear();
+		createBall();
+	}
+}
 function drawplayer(){
 	if(player.life == 0){
 		drawtext();
@@ -206,10 +250,9 @@ function drawplayer(){
 	drawlife();
 	drawlvl();
 	
-	
-	
 	//_reqAnimation(drawplayer);
 }
+
 function createBall(){
 	_ball = new Ball(_canvas.width,_canvas.height, player.level);
 	_ball2 = new Ball(_canvas.width,_canvas.height,player.level);
@@ -218,7 +261,25 @@ function createBall(){
 	_ball5 = new Ball(_canvas.width,_canvas.height,player.level);
 	_ball6 = new Ball(_canvas.width,_canvas.height,player.level);
 }
-
+function save(score, lvl, life){
+	sessionStorage.myScore=score;
+	sessionStorage.myLevel=lvl;
+	sessionStorage.myLife=life;
+}
+function loadsave(){
+	if(sessionStorage.myScore == null && sessionStorage.myLevel == null && sessionStorage.myLife == null)
+	{
+		player.score = 0;
+		player.level = 1;
+		player.life = 5;
+	}else{
+		player.score = parseInt(sessionStorage.myScore);
+		player.level = parseInt(sessionStorage.myLevel);
+		player.life = parseInt(sessionStorage.myLife);
+	}
+	createBall();
+	
+}
 window.onload = function() {
 	_canvas = document.getElementById("canvas");
 	_context = _canvas.getContext("2d");
@@ -227,9 +288,11 @@ window.onload = function() {
 
 	img = document.getElementById("img");
 	img2 = document.getElementById("img2");
-	img3 = document.getElementById("img3");
-	
-	createBall();
+	btnplay = document.getElementById("btnplay");
+	btnboom = document.getElementById("btnboom");
+	btnpause = document.getElementById("btnpause");
+	btnrs = document.getElementById("btnrs");
+	loadsave();
 
 	cx = _canvas.width/2;
 	cy = _canvas.height/2;
@@ -264,6 +327,7 @@ window.onload = function() {
 	       	}
        		checkLife();
        		uplevel();
+       		save(player.score, player.level, player.life);
         }
    	}, false);
 	
@@ -275,7 +339,16 @@ window.onload = function() {
        		//_reqAnimation(id);
        	}
     }, false);
+	_canvas2.addEventListener('click', function(evt) {
+        var mousePos = getMousePos(_canvas, evt);
+       	clickbtnboom(mousePos);
+       	
+    }, false);
 
+    _canvas2.addEventListener('click', function(evt) {
+        var mousePos = getMousePos(_canvas, evt);
+       	clickbtnrs(mousePos);      	
+    }, false);
 	
         _canvas.addEventListener("touch", function(evt)
         {
