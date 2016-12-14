@@ -161,9 +161,9 @@ function drawpbtn(){
 }
 
 function drawtext() {
-	_context.font = '30pt Calibri';
+	_context.font = '55pt Calibri';
 	_context.fillStyle = 'black';
-	_context.fillText("Thua", 150, 100);
+	_context.fillText("Thua, click de choi lai", 50, 300);
 }
 function drawlife() {
 	_context2.font = '18pt Calibri';
@@ -190,25 +190,26 @@ function checkLife(){
 	}	
 }
 function uplevel() {
-	if(player.score<=50) {
+	if(player.score <= 50) {
 		player.level = 1;
 	}
-	if(player.score>50 && player.score<=100){
+	if(player.score > 50 && player.score <= 100){
 		player.level = 2;
 	}
-	if(player.score>100 && player.score<=200){
+	if(player.score > 100 && player.score <= 200){
 		player.level = 3;
 	}
-	if(player.score>200 && player.score<=300){
+	if(player.score > 200 && player.score <= 300){
 		player.level = 4;
 	}
-	if(player.score>300 && player.score<=400){
+	if(player.score > 300 && player.score <= 400){
 		player.level = 5;
 	}
 	return player.level;
 }
 function clickbtnpause(mousepos) {
-	if(90 < mousepos.x && mousepos.x <122  && -62< mousepos.y && mousepos.y < -31 ) {
+	if(100 < mousepos.x && mousepos.x <125  && -50< mousepos.y && mousepos.y < -30 ) {
+		
 		if(player.pause == false) {
 			player.pause = true;				
 		}else{
@@ -216,12 +217,12 @@ function clickbtnpause(mousepos) {
 		}
 		return true;		
 	}else{
-		player.pause = false;
+		//player.pause = false;
 		return false;
 	}
 }
 function clickbtnboom(mousepos) {
-	if(140 < mousepos.x && mousepos.x <145  && -62< mousepos.y && mousepos.y < -31 ) {
+	if(145 < mousepos.x && mousepos.x <175  && -50< mousepos.y && mousepos.y < -31 ) {
 		uplevel();
 		player.score += 30;
 		save(player.score, player.level, player.life);
@@ -229,7 +230,7 @@ function clickbtnboom(mousepos) {
 	}
 }
 function clickbtnrs(mousepos) {
-	if(180 < mousepos.x && mousepos.x <205 && -62< mousepos.y && mousepos.y < -31 ) {
+	if(185 < mousepos.x && mousepos.x <215 && -50< mousepos.y && mousepos.y < -31 ) {
 		player.life = 5;
 		player.score = 0;
 		player.level = 1;
@@ -313,7 +314,7 @@ window.onload = function() {
 	}, false);
 	
 	_canvas2.addEventListener('click', function(evt) {
-		var mousePos = getMousePos(_canvas, evt);
+		var mousePos = getMousePos(_canvas, evt);console.log(mousePos.x);
 		if(clickbtnpause(mousePos)) {
 			_cAnimation(update());
 		}else{      		
@@ -337,7 +338,7 @@ window.onload = function() {
 	_canvas.addEventListener("touch", function(evt) // test tren mobile
 	{
 		var mousePos = getMousePos(_canvas, evt);
-		console.log(mousePos.x+" "+mousePos.y);
+		//console.log(mousePos.x+" "+mousePos.y);
 		if(player.pause == false){
 
 			if(killballmb(_ball, mousePos)){
