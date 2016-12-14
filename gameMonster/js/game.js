@@ -208,7 +208,7 @@ function uplevel() {
 	return player.level;
 }
 function clickbtnpause(mousepos) {
-	if(79 < mousepos.x && mousepos.x <112  && -62< mousepos.y && mousepos.y < -31 ) {
+	if(90 < mousepos.x && mousepos.x <122  && -62< mousepos.y && mousepos.y < -31 ) {
 		if(player.pause == false) {
 			player.pause = true;				
 		}else{
@@ -221,7 +221,7 @@ function clickbtnpause(mousepos) {
 	}
 }
 function clickbtnboom(mousepos) {
-	if(130 < mousepos.x && mousepos.x <165  && -62< mousepos.y && mousepos.y < -31 ) {
+	if(140 < mousepos.x && mousepos.x <145  && -62< mousepos.y && mousepos.y < -31 ) {
 		uplevel();
 		player.score += 30;
 		save(player.score, player.level, player.life);
@@ -229,7 +229,7 @@ function clickbtnboom(mousepos) {
 	}
 }
 function clickbtnrs(mousepos) {
-	if(170 < mousepos.x && mousepos.x <195 && -62< mousepos.y && mousepos.y < -31 ) {
+	if(180 < mousepos.x && mousepos.x <205 && -62< mousepos.y && mousepos.y < -31 ) {
 		player.life = 5;
 		player.score = 0;
 		player.level = 1;
