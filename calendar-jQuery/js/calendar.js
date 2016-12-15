@@ -54,23 +54,16 @@ function getY() {
 	return selectedValue;
 }
 
-function getM(){
+function getM() {
 	var selectedValue = parseInt($("#pickmonths option:selected").val());
-	//console.log(selectedValue);
-	// var selectBox = document.getElementById("pickmonths");
-	// var selectedValue = selectBox.options[selectBox.selectedIndex].value;
 	return selectedValue;
 }
 
 function checkY() {
   var year = getY();
-	if((year % 4 == 0) || (year % 100 == 0)){
-		//changeFuncM(true);
-		//alert("nhuan" + selectedValue);
+	if((year % 4 == 0) || (year % 100 == 0)) {
 		return true
 	}else{
-			//changeFuncM(false);
-			//alert("khong nhuan" + selectedValue);
 			return false
 		}		
 }
@@ -108,7 +101,7 @@ function printtable(year, month) {
 			}
   		}
 		var x = $("td");
-		for(var i = 0; i < day.length; i++){
+		for(var i = 0; i < day.length; i++) {
 		   	x.eq(i).text(day[i]);	   				
 		}
   	}else{
@@ -139,14 +132,14 @@ function printtable(year, month) {
 
 function notdayofmonth() {
   	var x = $('td');
-  	for(var i = 0; i < x.length; i++){  		
-   		if( x.eq(i).text() == " ") {
+  	x.each(function (i) {
+  		if( x.eq(i).text() == " ") {
 	   		x.eq(i).removeAttr("onclick");
 	   		x.eq(i).attr("class", "notdayofmonth");
    		}else{
    			x.eq(i).attr("class", "dayofmonth");
-   		}		
-	}
+   		}	
+  	})
 }
 
 
@@ -157,14 +150,12 @@ function today() {
 	var d = a.getMonth()+1;
 	var x = $('td');
   	if(c == getY() && d == getM()) {
-  		for(var i = 0; i < x.length; i++){
-  			//debugger
-		  	if( x.eq(i).text() == b){
+  		x.each(function (i) {
+  			if( x.eq(i).text() == b) {
 		  		x.eq(i).attr("class", "today");
-  			}else{
-  			
-   			}
-   		}
+  			}else{ 			
+   				 }
+  		})
 	}
 }
 
