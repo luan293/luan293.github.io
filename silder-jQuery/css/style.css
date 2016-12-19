@@ -1,0 +1,58 @@
+.btn-left {
+	background: url(../img/prev.png) no-repeat;
+	left: -5%;
+	width: 50px;
+	height: 50px;
+}
+.btn-right {
+	background: url(../img/next.png) no-repeat;
+	width: 50px;
+	height: 50px;
+	right: -5%;
+}
+.btn {
+	position: absolute;
+	top: 40%;
+	background-color: #ffffff;
+	z-index: 9;
+}
+.show-img {
+	width: 600px;
+	height: 375px;
+	overflow: hidden;
+	float: left;
+}
+.show-img img {
+	width: 100%;
+}
+.small-img {
+	margin-top: 10px;
+	margin-left: 15%;
+}
+.small {
+	width: 100px;
+	height: 70px;
+	float: left;
+	margin-left: 10px;
+}
+.notsmall {
+	border: 3px rgba(23, 60, 33, .58) solid;	   
+}
+.showimg {
+	display: block;
+}
+.hideimg {
+	display: none;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+.wrapper {
+	width: 45%;
+	margin: 0 auto;
+	position: relative;
+}
