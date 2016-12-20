@@ -1,0 +1,54 @@
+img {
+	display: none;
+}
+body {
+	margin: 0px;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    width: 0px;
+    height: 0px;
+}
+#canvas {
+	background: url(../img/abstract-background-with-a-geometric-design_1048-2803.jpg) no-repeat;
+    background-size: cover;
+}
+#battlefield { 
+	width: 320px;
+	height: 420px;
+	border: 1px #000000 solid;
+	position: relative;;
+}
+#playermenu {
+	display: inline-block;
+}
+#text {
+	position: absolute;
+    top: 134px;
+}
+#pause {
+	left: 100px;
+    top: 110px;
+}
+#restart {
+	left: 230px;
+    top: 110px;
+}
+#boom {
+	left: 170px;
+    top: 110px;
+}
+img {
+	display:block;
+	width: 40px;
+	position: absolute;
+}
+p {
+	width: 40%;
+	float: left;
+}
+@media only screen and (max-width: 768px) {
+	
+}
