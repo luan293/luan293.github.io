@@ -473,7 +473,10 @@ p{
 		position: absolute;
     	font-size: 20px;
     	right: 15px;
-    	top: 30%;
+    	    top: 25px;
+	}
+	.menu1 ul{
+		position: static;
 	}
 
 }

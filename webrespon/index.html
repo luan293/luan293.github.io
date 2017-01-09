@@ -4,15 +4,27 @@
 	<title>滋賀県草津市のエステ・発毛ならFeminin（フェミニン）</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="js/jquery-3.1.1.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js/js.js"></script>
+	
 </head>
 <body onload="load()">
+<script type="text/javascript">
+	$(document).on("pagecreate",".logo",function(){
+  $("p").on("tap",function(){
+    console.log("saasdasd")
+  });                       
+});
+</script>
 	<div id="header_container">
 		<div class="wrapper_960">
 			<div id="menu_mb">
 			</div>
-			<div class="logo" onclick="">
+			<div class="logo">
 				<h1>滋賀県草津市のエステ・発毛・育毛の専門家がいるサロンです。</h1>
 				<a><img src="img/header_logo.jpg" alt=""></a>
 				<div class="contact">
@@ -39,7 +51,7 @@
 								<a href="#">フェイシャル</a>								
 							</li>
 							<li class="sub_menu">
-								<a href="#">スリム</a>								
+								<a href="#">sss</a>								
 							</li>
 							<li class="sub_menu">
 								<a href="#">スリム</a>								
@@ -48,6 +60,7 @@
 								<a href="#">スリム</a>								
 							</li>
 						</ul>
+
 					</li>
 					<li class="menu1" id="menu_3"><a href="#"></a><img src="img/menu_3.jpg" alt="">
 						<ul>
