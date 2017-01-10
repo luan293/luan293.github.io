@@ -1,15 +1,18 @@
 body{
-	font-size: 12px;
-	font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+	font-size: 0.8em;
+	font-family: sans-serif;
 	margin: 0; 
 }
 h1, a, p {
 	color: #73523f;
+	font-family: inherit; 
 }
 p{
 	line-height: 1.6;
 }
-
+a{
+	text-decoration: none;
+}
 .clearfix:after{
     clear: both;
     content: ".";
@@ -31,13 +34,14 @@ p{
 	margin-top: 10px;
 }
 .logo h1{
-	font-size: 12px;
+	font-size: 0.8em;
     text-align: left;  
     margin: 10px 0;
     font-weight: normal;
 }
 .logo a{
 	float: left;
+	width: 40%;
 }
 .contact{
 	float: right;
@@ -51,6 +55,12 @@ p{
 	display: inline-block;
 }
 /******************** menu *****************/
+#btn_showmenu{
+	display: none;
+	position: absolute;
+	top:5px;
+	right:5px;
+}
 #main_menu{
 	text-align: center;
     display: inline-block;
@@ -93,15 +103,17 @@ p{
 }
 #single-nav  ul  li{
 	list-style: none;
-	     position: relative;
+	position: relative;
+	width: 100%;
 }
 #single-nav > ul {
 	padding: 0;
     display: flex;
     background: url(../img/line_menu.jpg) no-repeat right center;
     margin: 1px;
-
+	justify-content: space-between;
 }
+
 .menu1 {
   //flex: 1 0 auto;
   background: url(../img/line_menu.jpg) no-repeat left center;
@@ -111,6 +123,9 @@ p{
 }
 #single-nav img{
 	width: 100%;
+}
+#menu_mb{
+	display: none;
 }
 /********************end menu *****************/
 
@@ -138,6 +153,7 @@ p{
 }
 .title_category img {
 	float: left;
+	max-width: 100%;
 }
 .category1 .article{
 	margin-top: 15px;
@@ -160,7 +176,8 @@ p{
 	width: 30%;
 	float: left;
 	border: 1px solid #d9d9d9;
-	min-height: 330px;
+	min-height: 360px;
+    max-height: 360px;
 	position: relative;
 }
 
@@ -173,11 +190,19 @@ p{
 }
 .category2 .article a{
 	position: absolute;
-    bottom: 5px;
+    bottom: 1%;
     left: 0px;
 }
+.category2 .article .text_content p{
+	/*min-height: 170px;
+	max-height: 170px;
+	overflow: hidden;*/
+}
+.category2 .text_content{
+	min-height: 100px;
+}
 .img_button_article{
-	display: inline-block;;
+	//display: inline-block;;
 	width: 100%;
 }
 .img_button_article img{
@@ -207,7 +232,7 @@ p{
 	margin: 0px;
 	margin-bottom: 15px;
     padding-bottom: 15px;
-    padding-left: 128px;
+    padding-left: 20%;
     background: url(../img/bg_index_dl.jpg) repeat-x left bottom;
 }
 
@@ -250,7 +275,7 @@ p{
 .board2 .li_1{
 	background: url(../img/aside_bullet_1.jpg) no-repeat left center;
     padding-left: 15px;
-    font-size: 14px;
+    font-size: 0.85em;
     border-bottom: 1px solid #e9dfd9;
     margin-bottom: 5px;
     margin-left: 0;   
@@ -344,8 +369,8 @@ p{
 }
 .menu_1 a{
 	margin-left:10px !important;
-	background: url(../img/footer_bullet_2.png) no-repeat left 5px !important;
-    font-size: 16px;
+	background: url(../img/footer_bullet_2.png) no-repeat left 0px !important;
+    font-size: 0.87em;
     padding-left: 17px;
 }
 .copyright{
@@ -354,6 +379,21 @@ p{
     padding: 8px 0 3px 0;
     font-weight: bold;
    
+}
+.btn-totop{
+	position: fixed;
+	bottom: 5%;
+	right:5%;
+}
+.btn-totop a{
+	padding: 15px;
+	background-color: #f0831e;
+	text-decoration: none;
+	border-radius: 5px;
+	color: #ffffff;
+}
+.btn-totop a:hover{
+	background-color: #ffb452;
 }
 @media screen and (max-width: 644px) {
 	.wrapper_960{
@@ -372,6 +412,10 @@ p{
 	.logo h1{
 		text-align: center;
 	}
+	.logo a {
+   
+   	 width: 100%;
+	}
 	.contact{
 		text-align: center;
 		display: inline-block;
@@ -380,6 +424,9 @@ p{
 	#main_container{
 		margin-left:3%;
 		margin-right:3%;
+	}
+	#header_container{
+		border-top: 35px solid #f0831e;
 	}
 	.category1 .article img {
     	float: none;
@@ -392,11 +439,7 @@ p{
 	.category2{
 		text-align: center;
 	}
-	.category2 .article {
-    	width: 60%;
-    	float: none;
-    	display: inline-block;
-	}
+	
 	#slider_container {
     	display: none;
 	}
@@ -407,8 +450,12 @@ p{
   		margin-top: 3%;
     	margin-bottom: 3%; 
 	}
-	.category2 .article a {
-    	position: static;
+
+	.img_button_article img {
+    	width: 70% !important;
+	}
+	.index dd {
+		padding-left: 7%;
 	}
 	.index dt {
 		float: none;
@@ -449,7 +496,13 @@ p{
 	#flex_footer{
 		display: block;
 	}
+	#footer_contact img {
+    	width: 70%;
+	}
 	/********** menu **************/
+	#menu_mb{
+		display: none;
+	}
 	#main_menu{
 	    //width: 20%;
 	    //position: absolute;
@@ -465,18 +518,34 @@ p{
 	}
 	.menu1{
 		background: none;
+		border-bottom: 1px solid #e6dcd0;
 	}
 	#single-nav img{
-		width: 40%;
+		width: 30%;
 	}
 	.mean-expand{
 		position: absolute;
     	font-size: 20px;
     	right: 15px;
-    	    top: 25px;
+    	top: 25px;
 	}
 	.menu1 ul{
 		position: static;
+		background: none;
+		width: 100%;
+	}
+	#btn_showmenu{
+		display: block;
+	}
+	.sub_menu{
+		border-bottom: 1px solid #e6dcd0;
+		background: none !important;
+	}
+	.sub_menu a{
+		font-size: 0.88em;
+	}
+	.sub_menu:first-child{
+		border-top: 1px solid #e6dcd0;
 	}
 
 }
@@ -503,9 +572,7 @@ p{
 	#main_menu{
 		//display: none;
 	}
-	#header_container{
-		border-top: 35px solid #f0831e;
-	}
+	
 	#slider_container{
 		//display: none;
 	}
@@ -514,3 +581,34 @@ p{
 	}
 }
 
+@media screen and (min-width: 480px) and (max-width: 645px) {
+	.category2 .article{
+		width: 45%;
+	}
+	.category2 .article:last-child{
+		margin-left:25%;	
+	}
+	.category2 .article:nth-child(3){
+		margin-top: 0px;
+	}
+}
+@media screen and (max-width: 479px){
+	
+	.category1 .article img {
+		width: 100%;
+	}
+	
+}
+@media screen and (min-width: 241px) and (max-width: 479px){
+	.category2 .article {
+    	//width: 60%;
+    	min-width: 245px;
+    	float: none;
+    	display: inline-block;
+	}
+}
+@media screen and (max-width: 240px){
+	.category2 .article {
+    	width: 99%;
+	}
+}

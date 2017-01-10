@@ -2,6 +2,7 @@ var flag = false;
 function load(){
 	menu();
 	slider();
+	scrolltop();
 }
 function slider(){
 	$(".banner_img").css("display", "none");
@@ -37,29 +38,49 @@ function menu(){
 			$(a.children('ul')).after('<a class="mean-expand" id="mean-expand'+i+'">+</a>');
 			}
 		}
+		$('#btn_showmenu').on('click', function(){
+			if(!flag){
+				$('#btn_showmenu img').attr('src','img/btn_hidemenu.jpg');
+				$('#menu_mb').css('display','block');
+				flag = true;
+			}else{
+				flag = false;
+				$('#btn_showmenu img').attr('src','img/btn_showmenu.jpg');
+				$('#menu_mb').css('display','none');
+			}
+		})
 		menuOnmb();
 	}	
 	
 }
+var numb;
 function menuOnmb() {
 
   		$(".mean-expand").on("click", function(){
-		var numb = $(this).attr('id');
+		 numb = $(this).attr('id');		
 		var status = $("#"+numb).parent('li').attr('id');
-		console.log(status);
-		if(!flag){					
-			$("#"+status+" .sub_menu").css({"display": "flex"});
-			flag = true;
+		$(".sub_menu").css("display", "none");
+		if(!check_showhide()){
+			//click vao dau - 
+			$(".sub_menu").css("display", "none");
+			$('#'+numb).html('+');
 		}else{
 			$(".sub_menu").css("display", "none");
-			//$("#"+status).find("img").attr("src", "img/"+status+".jpg");
-			flag = false;
-		}
-		
+			$('.mean-expand').html('+');
+			$('#'+numb).html('-');
+			$("#"+status+" .sub_menu").css({"display": "flex"});	
+		}		
 		});
-	
-	
 }
+function check_showhide(){
+	if($('#'+numb).html() == '-')
+	{
+		return false;
+	}else{
+		return true;
+	}
+}
+
 function menuOnpc() {
 	$(".menu1").mouseenter(function(){
 		var status = $(this).attr('id');		
@@ -72,4 +93,31 @@ function menuOnpc() {
 			$(".sub_menu").css("display", "none");
 			$("#"+status).find("img").attr("src", "img/"+status+".jpg");
 		})
+}
+function scrolltop() 
+{
+    var id_button = '.btn-totop';
+ 
+    // Kéo xuống khoảng cách 220px thì xuất hiện button
+    var offset = 220;
+ 
+    // THời gian di trượt là 0.5 giây
+    var duration = 500;
+ 
+    // Thêm vào sự kiện scroll của window, nghĩa là lúc trượt sẽ
+    // kiểm tra sự ẩn hiện của button
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery(id_button).fadeIn(duration);
+        } else {
+            jQuery(id_button).fadeOut(duration);
+        }
+    });
+ 
+    // Thêm sự kiện click vào button để khi click là trượt lên top
+    jQuery(id_button).click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    });
 }
