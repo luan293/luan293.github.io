@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/CanvasChartPie.js"></script>
+	<script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { 
+                            success:60
+                           };
+            CanvasChartPie.drawChart('canvas', dataDef);
+        });
+
+    </script>
+</head>
+<body>
+	<canvas id="mycanvas" width="900" height="900" ></canvas>
+</body>
+</html>
